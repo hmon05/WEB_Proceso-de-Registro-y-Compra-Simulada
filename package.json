@@ -1,0 +1,23 @@
+{
+  "name": "web_proceso-de-registro-y-compra-simulada",
+  "version": "1.0.0",
+  "description": "Proceso de Registro y Compra Simulada_WEB  de prueba",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmon05/WEB_Proceso-de-Registro-y-Compra-Simulada.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hmon05/WEB_Proceso-de-Registro-y-Compra-Simulada/issues"
+  },
+  "homepage": "https://github.com/hmon05/WEB_Proceso-de-Registro-y-Compra-Simulada#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
