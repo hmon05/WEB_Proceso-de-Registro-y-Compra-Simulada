@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Simulación E-commerce</title>
 </head>
+
 <body>
+    <!-- Registro de usuario -->
     <div class="container" id="login-container">
         <h1>Registro de Usuario</h1>
         <form id="registrationForm">
@@ -24,6 +27,7 @@
         <p>¿Ya tienes cuenta? <a href="#" onclick="showLogin()">Inicia sesión</a></p>
     </div>
 
+    <!-- Inicio de sesión -->
     <div class="container hidden" id="login-popup">
         <h1>Iniciar Sesión</h1>
         <input type="text" id="username" placeholder="Usuario" required>
@@ -31,10 +35,12 @@
         <button onclick="login()">Iniciar sesión</button>
     </div>
 
+    <!-- Selección de productos -->
     <div class="container hidden" id="products-container">
         <h1>Selecciona tus Productos</h1>
         <button class="product" onclick="addToCart('Producto 1')">Producto 1</button>
         <button class="product" onclick="addToCart('Producto 2')">Producto 2</button>
+
         <div class="product">
             <span>Producto Personalizado</span>
             <select id="customOption">
@@ -43,9 +49,11 @@
             </select>
             <button onclick="addCustomProduct()">Agregar</button>
         </div>
+
         <button id="buy" onclick="showPayment()">Comprar</button>
     </div>
 
+    <!-- Formulario de pago -->
     <div class="popup hidden" id="payment-popup">
         <h2>Detalles de Pago</h2>
         <div id="cart-details"></div>
@@ -56,12 +64,15 @@
         <button onclick="finalizePurchase()">Finalizar Compra</button>
     </div>
 
+    <!-- Confirmación de compra -->
     <div class="popup hidden" id="confirmation-popup">
         <h2>¡Compra Exitosa!</h2>
         <p>Tu pedido ha sido confirmado 🎉</p>
         <button onclick="resetApp()">Volver a Inicio</button>
     </div>
 
+    <!-- Script -->
     <script src="script.js"></script>
 </body>
+
 </html>
