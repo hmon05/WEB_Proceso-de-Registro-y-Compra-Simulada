@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Simulación de Registro y Compra</title>
+    <title>Simulación E-commerce</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="login-container">
         <h1>Registro de Usuario</h1>
         <form id="registrationForm">
             <label for="name">Nombre Completo:</label>
@@ -21,30 +21,45 @@
 
             <button type="submit">Registrarse</button>
         </form>
+        <p>¿Ya tienes cuenta? <a href="#" onclick="showLogin()">Inicia sesión</a></p>
+    </div>
 
-        <h2>Productos</h2>
-        <div class="products">
-            <div class="product">
-                <span>Producto 1</span>
-                <button class="add-to-cart" data-product="Producto 1">Agregar</button>
-            </div>
-            <div class="product">
-                <span>Producto 2</span>
-                <button class="add-to-cart" data-product="Producto 2">Agregar</button>
-            </div>
-            <div class="product">
-                <span>Producto Personalizado</span>
-                <select>
-                    <option value="rojo">Rojo</option>
-                    <option value="azul">Azul</option>
-                </select>
-                <button class="add-to-cart" data-product="Producto Personalizado">Agregar</button>
-            </div>
+    <div class="container hidden" id="login-popup">
+        <h1>Iniciar Sesión</h1>
+        <input type="text" id="username" placeholder="Usuario" required>
+        <input type="password" id="userPassword" placeholder="Contraseña" required>
+        <button onclick="login()">Iniciar sesión</button>
+    </div>
+
+    <div class="container hidden" id="products-container">
+        <h1>Selecciona tus Productos</h1>
+        <button class="product" onclick="addToCart('Producto 1')">Producto 1</button>
+        <button class="product" onclick="addToCart('Producto 2')">Producto 2</button>
+        <div class="product">
+            <span>Producto Personalizado</span>
+            <select id="customOption">
+                <option value="rojo">Rojo</option>
+                <option value="azul">Azul</option>
+            </select>
+            <button onclick="addCustomProduct()">Agregar</button>
         </div>
+        <button id="buy" onclick="showPayment()">Comprar</button>
+    </div>
 
-        <button id="checkout">Finalizar Compra</button>
+    <div class="popup hidden" id="payment-popup">
+        <h2>Detalles de Pago</h2>
+        <div id="cart-details"></div>
+        <input type="text" placeholder="Dirección" id="address" required>
+        <input type="text" placeholder="Número de tarjeta" id="cardNumber" required>
+        <input type="text" placeholder="Expiración (MM/YY)" id="expiry" required>
+        <input type="text" placeholder="CVV" id="cvv" required>
+        <button onclick="finalizePurchase()">Finalizar Compra</button>
+    </div>
 
-        <p id="message"></p>
+    <div class="popup hidden" id="confirmation-popup">
+        <h2>¡Compra Exitosa!</h2>
+        <p>Tu pedido ha sido confirmado 🎉</p>
+        <button onclick="resetApp()">Volver a Inicio</button>
     </div>
 
     <script src="script.js"></script>
