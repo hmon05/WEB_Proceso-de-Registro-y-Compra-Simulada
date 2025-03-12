@@ -2,7 +2,7 @@
 Proceso de Registro y Compra Simulada_WEB  de prueba
 
 ## Estructura de la web
-    **proyecto-web-simulacion**
+    proyecto-web-simulacion
     │
     ├── package.json
     │
